@@ -5,7 +5,7 @@
 <main class="container">
     <div class="row">
         <div class="col-md-6 offset-md-3 mt-5">
-            <h1 class="text-center display-3 py-3">Tasks Pending</h1>
+            <h1 class="text-center display-3 py-3">{{task_title}}</h1>
             <ul class="list-group mt-3">
                 {% for task in tasks %}
                 <a href="{% url 'task_detail' task.id %}" class="list-group-item">
@@ -21,7 +21,7 @@
                     </header>
                     <p>{{task.description}}</p>
 
-                    <p>{{task.datecompleted|date:'M j Y:i'}} </p>
+                    <p>{{task.datecompleted|date:'M j Y H:i'}} </p>
                 
                 </a>
 
